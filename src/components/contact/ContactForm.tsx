@@ -14,13 +14,14 @@ import {
   Send,
   CheckCircle2,
   AlertCircle,
+  MessageCircle,
 } from "lucide-react";
 
 export const ContactForm: React.FC = () => {
   const { t, locale } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
-  const [successResponse, setSuccessResponse] = useState<boolean>(false);
+  const [successResponse, setSuccessResponse] = useState<{ whatsappUrl: string } | null>(null);
 
   const {
     register,
@@ -47,7 +48,7 @@ export const ContactForm: React.FC = () => {
       if (!res.ok || !json.success) {
         setServerError(json.message || "Failed to submit / تعذر إرسال الرسالة");
       } else {
-        setSuccessResponse(true);
+        setSuccessResponse({ whatsappUrl: json.whatsappUrl });
         reset();
       }
     } catch (err) {
@@ -73,6 +74,17 @@ export const ContactForm: React.FC = () => {
               <p className="text-xs text-cream-300 leading-relaxed">
                 {t.contact.successDesc}
               </p>
+              <div className="mt-4">
+                <a
+                  href={successResponse.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-lg transition-all"
+                >
+                  <MessageCircle className="w-4 h-4 fill-current" />
+                  <span>{t.contact.successWhatsAppButton}</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

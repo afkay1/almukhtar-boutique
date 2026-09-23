@@ -19,10 +19,23 @@ export async function POST(req: NextRequest) {
 
     const data = result.data;
 
+    // Generate a WhatsApp deep link so the message actually reaches the boutique team
+    const whatsappMsg =
+      `*Al-Mukhtar Website Inquiry*%0A%0A` +
+      `*Name:* ${data.name}%0A` +
+      `*Email:* ${data.email}%0A` +
+      `*Phone:* ${data.phone}%0A` +
+      `*Subject:* ${data.subject}%0A` +
+      `*Message:* ${data.message}%0A` +
+      `%0A_Sent via Al-Mukhtar Official Portal_`;
+
+    const whatsappUrl = `https://wa.me/966597193831?text=${whatsappMsg}`;
+
     return NextResponse.json({
       success: true,
       message: "Message received successfully / تم استلام رسالتكم بنجاح",
       inquiryId: `INQ-${Date.now().toString().slice(-6)}`,
+      whatsappUrl,
       data,
     });
   } catch (error) {

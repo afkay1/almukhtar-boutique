@@ -251,6 +251,7 @@ export interface TranslationDictionary {
     submittingButton: string;
     successTitle: string;
     successDesc: string;
+    successWhatsAppButton: string;
     dualBranchesTitle: string;
     faqTitle: string;
     faqSubtitle: string;
@@ -519,8 +520,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       messagePlaceholder: "How can we assist your sartorial needs today?",
       submitButton: "Send Inquiry",
       submittingButton: "Sending...",
-      successTitle: "Message Delivered!",
-      successDesc: "Thank you for reaching out to Al-Mukhtar. Our Olaya boutique team has received your message and will respond shortly.",
+      successTitle: "Message Ready to Send",
+      successDesc: "Thank you for reaching out to Al-Mukhtar. Tap below to deliver your message to our Olaya boutique team on WhatsApp for a prompt response.",
+      successWhatsAppButton: "Send via WhatsApp",
       dualBranchesTitle: "Direct Branch Hotlines",
       faqTitle: "Frequently Asked Questions",
       faqSubtitle: "Quick answers regarding our collections, fit services, and boutique visits.",
@@ -787,8 +789,9 @@ export const translations: Record<Locale, TranslationDictionary> = {
       messagePlaceholder: "كيف يمكننا خدمتك اليوم؟",
       submitButton: "إرسال الاستفسار",
       submittingButton: "جاري الإرسال...",
-      successTitle: "تم إرسال رسالتك بنجاح!",
-      successDesc: "شكراً لتواصلك مع المختار. استلم فريق بوتيك العليا رسالتك وسنعاود التواصل معك في أقرب وقت.",
+      successTitle: "رسالتك جاهزة للإرسال",
+      successDesc: "شكراً لتواصلك مع المختار. اضغط أدناه لإرسال رسالتك عبر واتساب إلى فريق بوتيك العليا للرد السريع.",
+      successWhatsAppButton: "الإرسال عبر واتساب",
       dualBranchesTitle: "أرقام الفروع المباشرة",
       faqTitle: "الأسئلة الشائعة",
       faqSubtitle: "إجابات سريعة حول تشكيلاتنا، خدمات ضبط المقاسات، وزيارة البوتيك.",

@@ -5,7 +5,14 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 
+// Live production URL. Update both this and openGraph.url below once the
+// custom domain (e.g. https://almukhtar-boutique.sa) is purchased and
+// pointed at this deployment — until then, keep this as the real, working
+// Vercel URL so link previews and canonical tags don't point somewhere dead.
+const SITE_URL = "https://almukhtar-boutique.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Al-Mukhtar (المختار) | Top Choice Luxury Menswear Boutique — Al Olaya, Riyadh",
   description:
     "Al-Mukhtar (Top Choice) is Riyadh's premier multi-brand menswear house in Al Olaya. Curated collections of Landini Milano, Pal Zileri, and Bugatti suiting, overcoats, knitwear, and in-house precision tailoring.",
@@ -29,7 +36,7 @@ export const metadata: Metadata = {
     title: "Al-Mukhtar (المختار) | Luxury Menswear Boutique — Al Olaya, Riyadh",
     description:
       "Curated European luxury tailoring, Landini Milano, Pal Zileri, Bugatti, and in-house fitting studio on Olaya Street, Riyadh.",
-    url: "https://almukhtar-boutique.sa",
+    url: SITE_URL,
     siteName: "Al-Mukhtar Boutique",
     images: [
       {

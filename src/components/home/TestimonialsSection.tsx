@@ -57,10 +57,17 @@ export const TestimonialsSection: React.FC = () => {
                   </span>
                 </div>
 
-                <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/30">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>{locale === "ar" ? "تقييم موثق من Google" : "Verified Google Review"}</span>
-                </span>
+                {current.verified ? (
+                  <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/30">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>{locale === "ar" ? "تقييم موثق من Google" : "Verified Google Review"}</span>
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 text-xs text-gold-400 font-semibold px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25">
+                    <Quote className="w-3.5 h-3.5" />
+                    <span>{locale === "ar" ? "تجربة عميل" : "Customer Experience"}</span>
+                  </span>
+                )}
               </div>
 
               {/* Comment Quote */}
